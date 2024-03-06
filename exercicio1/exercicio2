@@ -1,0 +1,89 @@
+//Faça um programa que, dado o vetor {2, 4, 35, 50, 23, 17, 9, 12, 27, 5}, retorne:
+//a) Menor valor
+//b) Maior valor
+
+public class Main
+{
+	public static void main(String[] args) {
+	    int[] vetor = {2, 4, 35, 50, 23, 17, 9, 12, 27, 5};
+	    
+	    
+	    int menor = encontrarMenor(vetor);
+	    System.out.println("Menor valor: " + menor);
+	    
+	    
+	    int maior = encontrarMaior(vetor);
+	    System.out.println("Maior valor: " + maior);
+		
+	}
+	
+	
+	public static int encontrarMenor(int[] vetor ){
+	    int menor = vetor[0];
+	    for (int i = 1; i < vetor.length; i++){
+	        if(vetor[i] < menor){
+	            menor = vetor[i];
+	        }
+	    }
+	    
+	    return menor;
+	}
+	
+	
+	public static int encontrarMaior(int[] vetor ){
+	    int maior = vetor[0];
+	    for (int i = 1; i < vetor.length; i++){
+	        if(vetor[i] > maior){
+	            maior = vetor[i];
+	        }
+	    }
+	    
+	    return maior;
+	}
+}
+//*******************************************************************************
+\\Faça um programa que declare três valores inteiros por linha de uma matriz e outros
+\\três valores por coluna e depois faça uma rotina que exiba todos os valores informados
+\\formato de uma matriz bidimensional e imprima o resultado da soma de todos os
+\\valores incluídos na matriz.
+\\import java.util.Scanner;
+
+public class Main{
+    
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        int[][] matriz = new int [3][3];
+        
+        
+        System.out.println("Digite os valores da matriz:");
+        for (int i = 0; i < 3; i++){
+            System.out.println("Digite os valores da linha:" + (i + 1) + "");
+            for (int j = 0; j < 3; j++){
+                matriz[i][j] = scanner.nextInt();
+                
+            }       
+        }
+        
+        System.out.println("Matriz:");
+         for (int i = 0; i < 3; i++){
+              for (int j = 0; j < 3; j++){
+                 System.out.println(matriz[i][j] + " ") ;
+              }
+             System.out.println(); 
+         }
+         
+         int soma = calcularSoma(matriz);
+         System.out.println("Soma dos valores na matriz:" + soma);
+}
+    public static int calcularSoma(int[][] matriz){
+        int soma = 0;
+        for (int i = 0; i < matriz.length; i++ ){
+            for(int j = 0; j < matriz.length; j++ ){
+                soma += matriz[i][j];
+            }
+        }
+        return soma;
+    }
+}
+
